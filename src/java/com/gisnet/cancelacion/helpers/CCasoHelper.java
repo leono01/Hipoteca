@@ -125,8 +125,7 @@ public class CCasoHelper {
         caso.setFechaDeCierre(null);
 
         caso.setCNotario(null);
-
-        //caso.setNombreAcreditado(nombreAcreditado);
+        
         ida.setCodigo(0);
         ida.setDescripcion("Caso actualizado con éxito");
         ida.setNumeroDeCaso(numeroDeCaso);
@@ -163,8 +162,6 @@ public class CCasoHelper {
 
         int dias = -15;
 
-        //dias = (int)(Math.random()*365 + 1);
-        //System.out.println(dias);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fechaDeActualizacion);
         calendar.add(Calendar.DAY_OF_YEAR, dias);
