@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservices.cancelacion.gisnet.com/" xmlns:tns="http://webservices.cancelacion.gisnet.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="actualizaCaso" type="tns:actualizaCaso"/>
+
+  <xs:element name="actualizaCasoResponse" type="tns:actualizaCasoResponse"/>
+
+  <xs:element name="consultaCaso" type="tns:consultaCaso"/>
+
+  <xs:element name="consultaCasoResponse" type="tns:consultaCasoResponse"/>
+
+  <xs:element name="registraCaso" type="tns:registraCaso"/>
+
+  <xs:element name="registraCasoResponse" type="tns:registraCasoResponse"/>
+
+  <xs:complexType name="registraCaso">
+    <xs:sequence>
+      <xs:element name="numeroDeCredito" type="xs:int"/>
+      <xs:element name="numeroDeCaso" type="xs:int"/>
+      <xs:element name="nombreAcreditado" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registraCasoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:statusOperacion" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="statusOperacion">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int"/>
+      <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="actualizaCaso">
+    <xs:sequence>
+      <xs:element name="numeroDeCredito" type="xs:int"/>
+      <xs:element name="numeroDeCaso" type="xs:int"/>
+      <xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="status" type="xs:int"/>
+      <xs:element name="cartaDeCancelacionPdf" type="xs:string" minOccurs="0"/>
+      <xs:element name="fechaEmisionCarta" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="numeroDeFolio" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="actualizaCasoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:infoDeActualizacion" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="infoDeActualizacion">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int"/>
+      <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+      <xs:element name="numeroDeCaso" type="xs:int"/>
+      <xs:element name="numeroDeCredito" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="consultaCaso">
+    <xs:sequence>
+      <xs:element name="numeroDeCredito" type="xs:int"/>
+      <xs:element name="numeroDeCaso" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="consultaCasoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:infoDeConsulta" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="infoDeConsulta">
+    <xs:sequence>
+      <xs:element name="cartaDeCancelacion" type="xs:string" minOccurs="0"/>
+      <xs:element name="fechaDeActualizacion" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="fechaDeEmisionDeCarta" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="numeroDeCaso" type="xs:int"/>
+      <xs:element name="numeroDeCredito" type="xs:int"/>
+      <xs:element name="numeroDeFolio" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
