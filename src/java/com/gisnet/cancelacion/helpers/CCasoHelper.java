@@ -188,8 +188,7 @@ public class CCasoHelper {
         try {
             Date ffda = formatter.parse(f1);
             Date ffe = formatter.parse(f2);
-
-                
+ 
             System.out.println(formatter.format(ffda));
             System.out.println(formatter.format(ffe));
             
