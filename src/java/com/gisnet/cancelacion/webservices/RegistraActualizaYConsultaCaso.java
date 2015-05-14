@@ -19,6 +19,7 @@ package com.gisnet.cancelacion.webservices;
 import com.gisnet.cancelacion.helpers.CCasoHelper;
 import com.gisnet.cancelacion.pojos.InfoDeActualizacion;
 import com.gisnet.cancelacion.pojos.InfoDeConsulta;
+import com.gisnet.cancelacion.pojos.StatusCaso;
 import com.gisnet.cancelacion.pojos.StatusOperacion;
 import java.util.Date;
 import javax.jws.WebService;
@@ -44,13 +45,14 @@ public class RegistraActualizaYConsultaCaso {
 
     public StatusOperacion registraCaso(@WebParam(name = "numeroDeCredito")     int numeroDeCredito,
                                         @WebParam(name = "numeroDeCaso")        int numeroDeCaso,
-                                        @WebParam(name = "nombreAcreditado")    String nombreAcreditado
+                                        @WebParam(name = "nombreAcreditado")    String nombreAcreditado,
+                                        @WebParam(name = "entidad")             String entidad
     ) {
 
         StatusOperacion so = new StatusOperacion();
         CCasoHelper cch = new CCasoHelper();
 
-        so = cch.queryRegistraCaso(numeroDeCredito, numeroDeCaso, nombreAcreditado);
+        so = cch.queryRegistraCaso(numeroDeCredito, numeroDeCaso, nombreAcreditado, entidad);
 
         return so;
 
@@ -111,5 +113,16 @@ public class RegistraActualizaYConsultaCaso {
         CCasoHelper cch = new CCasoHelper();
         idc = cch.queryConsultaCaso(numeroDeCredito,numeroDeCaso);
         return idc;
+    }
+    
+    @WebMethod(operationName = "estadoDelCaso")
+    public StatusCaso estadoDelCaso (@WebParam(name = "numeroDeCaso")  int numeroDeCaso){
+    
+        StatusCaso sc1 = new StatusCaso();
+        CCasoHelper cch = new CCasoHelper();
+        sc1 = cch.queryStatusCaso(numeroDeCaso);
+    
+        return sc1;
+    
     }
 }

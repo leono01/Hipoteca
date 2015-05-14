@@ -7,6 +7,9 @@
     <service name="RegistraActualizaYConsultaCaso">
       <implementation-class>com.gisnet.cancelacion.webservices.RegistraActualizaYConsultaCaso</implementation-class>
     </service>
+    <service name="ValidarCredito">
+      <implementation-class>com.gisnet.cancelacion.webservices.ValidarCredito</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

@@ -45,33 +45,28 @@ public class CNotarioHelper {
          }*/
         //CCaso caso = new CCaso();
         CEntidadHelper e = new CEntidadHelper();
+        
+        boolean esNumero= false;
+        
+        if (numeroDeCredito > 0 && numeroDeCredito <=99999999){
+            esNumero = true;
+        }else{esNumero=false;}
+        
+        if (entidad.matches("[A-ZA-ZA-Z]") || esNumero == true) {
+           
+            CNotario n3 = new CNotario();
+            n3.setCodigoNotario(234 + (int) Math.random());
+            n3.setNombreNotario("Teodoro Ortíz");
+            n3.setNotariaNumero("Notaria 100");
+            n3.setCEntidad(entidad);
+            n3.setConvenioInfonavit(1);
+            n3.setEmail("tortiz@notaria100.com");
+            n3.setTelefono("7687699876");
+            n3.setCodigoRespuesta("LN00");
 
-        if (entidad.equals("") || numeroDeCredito > 0) {
-            /*caso.setCasoId((long) Math.random());
-             caso.setNumeroDeCaso((int) Math.random());
-             caso.setNumeroDeCredito(numeroDeCredito);*/
+            cn.add(n3);
+            
             CNotario n1 = new CNotario();
-            n1.setCodigoNotario(234 + (int) Math.random());
-            n1.setNombreNotario("Teodoro Ortíz");
-            n1.setNotariaNumero("Notaria 100");
-            n1.setCEntidad(entidad);
-            n1.setConvenioInfonavit(1);
-            n1.setEmail("tortiz@notaria100.com");
-            n1.setTelefono("7687699876");
-            n1.setCodigoRespuesta("LN00");
-
-            cn.add(n1);
-            
-            
-            
-        } else {
-            if (numeroDeCredito <= 0 && entidad.equals("")) {
-                CNotario n1 = new CNotario();
-                n1.setCodigoRespuesta("LN03");
-                cn.add(n1);
-            } else {
-
-                CNotario n1 = new CNotario();
                 n1.setCodigoNotario(234 + (int) Math.random());
                 n1.setNombreNotario("Daniel Mejía");
                 n1.setNotariaNumero("Notaria 65");
@@ -92,6 +87,18 @@ public class CNotarioHelper {
 
                 cn.add(n1);
                 cn.add(n2);
+            
+            
+            
+        } else {
+            if (esNumero == false || entidad.equals("[^(A-ZA-ZA-Z)]")) {
+                CNotario n1 = new CNotario();
+                n1.setCodigoRespuesta("LN03");
+                cn.add(n1);
+                System.out.println("***** No fue numero o no fue clave");
+            } else {
+
+                
             }
         }
 
@@ -110,10 +117,10 @@ public class CNotarioHelper {
          } catch (Exception e) {
          e.printStackTrace();
          }*/
-        if (entidad.equals("")) {
+        if (entidad.matches("[^(A-ZA-ZA-Z)]")) {
 
             CNotario n1 = new CNotario();
-            n1.setCodigoRespuesta("Ingresar una entidad");
+            n1.setCodigoRespuesta("Ingresar una entidad. O puede que no sea la clave correcta de la entidad");
             cn.add(n1);
         } else {
 
@@ -143,11 +150,11 @@ public class CNotarioHelper {
 
             CNotario n3 = new CNotario();
             n3.setCodigoNotario(434);
-            n3.setNombreNotario("Damian Tapía");
-            n3.setNotariaNumero("Notaria 23");
+            n3.setNombreNotario("Danilo Torres");
+            n3.setNotariaNumero("Notaria 223");
             n3.setCEntidad(entidad);
             n3.setConvenioInfonavit(1);
-            n3.setEmail("dmejia@notaria23.com");
+            n3.setEmail("dtorres@notaria23.com");
             n3.setTelefono("4444843576");
 
             cn.add(n3);

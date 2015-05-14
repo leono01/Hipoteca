@@ -21,6 +21,10 @@ public class CCaso  implements java.io.Serializable {
      private Date fechaDeCierre;
      private Long proyectoDeCancelacion;
      private String nombreAcreditado;
+     private String entidad;
+
+   
+     private Date   fechaActualizacion;
      
 
     public CCaso() {
@@ -103,6 +107,22 @@ public class CCaso  implements java.io.Serializable {
         this.nombreAcreditado = nombreAcreditado;
     }
     
+    
+    public String getEntidad() {
+        return entidad;
+    }
+
+    public void setEntidad(String entidad) {
+        this.entidad = entidad;
+    }
+    
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
+    }
 }
 
 

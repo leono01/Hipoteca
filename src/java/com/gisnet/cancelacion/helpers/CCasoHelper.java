@@ -19,6 +19,7 @@ package com.gisnet.cancelacion.helpers;
 import com.gisnet.cancelacion.pojos.CCaso;
 import com.gisnet.cancelacion.pojos.InfoDeActualizacion;
 import com.gisnet.cancelacion.pojos.InfoDeConsulta;
+import com.gisnet.cancelacion.pojos.StatusCaso;
 import com.gisnet.cancelacion.pojos.StatusOperacion;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -39,7 +40,7 @@ public class CCasoHelper {
 
     }
 
-    public StatusOperacion queryRegistraCaso(int numeroDeCredito, int numeroDeCaso, String nombreAcreditado) {
+    public StatusOperacion queryRegistraCaso(int numeroDeCredito, int numeroDeCaso, String nombreAcreditado, String entidad) {
 
         StatusOperacion so = new StatusOperacion();
 
@@ -85,6 +86,7 @@ public class CCasoHelper {
             caso.setCNotario(null);
 
             caso.setNombreAcreditado(nombreAcreditado);
+            caso.setEntidad(entidad);
 
             System.out.println(caso.getNumeroDeCaso());
             so.setCodigo(0);
@@ -196,10 +198,23 @@ public class CCasoHelper {
             idc.setStatus(20);
             idc.setFechaDeActualizacion(fechaDeActualizacion);
             idc.setFechaDeEmisionDeCarta(fechaDeEmision);
+            idc.setNombreAcreditado("Miguel Angel Montes de Oca");
+            idc.setEntidad("MEX");
         } catch (ParseException ex) {
             Logger.getLogger(CCasoHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return idc;
+    }
+    
+    public StatusCaso queryStatusCaso(int numeroDeCaso){
+        
+        StatusCaso sc = new StatusCaso();
+        if(numeroDeCaso > 0 && numeroDeCaso <=999999999){
+            sc.setStatus(1);
+            sc.setDescripcion("El caso se ha creado");
+            sc.setFechaActualizacion(new Date());
+        }
+        return sc;
     }
 }

@@ -9,15 +9,39 @@
 
   <xs:element name="consultaCasoResponse" type="tns:consultaCasoResponse"/>
 
+  <xs:element name="estadoDelCaso" type="tns:estadoDelCaso"/>
+
+  <xs:element name="estadoDelCasoResponse" type="tns:estadoDelCasoResponse"/>
+
   <xs:element name="registraCaso" type="tns:registraCaso"/>
 
   <xs:element name="registraCasoResponse" type="tns:registraCasoResponse"/>
+
+  <xs:complexType name="estadoDelCaso">
+    <xs:sequence>
+      <xs:element name="numeroDeCaso" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="estadoDelCasoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:statusCaso" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="statusCaso">
+    <xs:sequence>
+      <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="registraCaso">
     <xs:sequence>
       <xs:element name="numeroDeCredito" type="xs:int"/>
       <xs:element name="numeroDeCaso" type="xs:int"/>
       <xs:element name="nombreAcreditado" type="xs:string" minOccurs="0"/>
+      <xs:element name="entidad" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -77,8 +101,12 @@
   <xs:complexType name="infoDeConsulta">
     <xs:sequence>
       <xs:element name="cartaDeCancelacion" type="xs:string" minOccurs="0"/>
+      <xs:element name="entidad" type="xs:string" minOccurs="0"/>
+      <xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="fechaDeActualizacion" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="fechaDeEmisionDeCarta" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="fechaEmisionCarta" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="nombreAcreditado" type="xs:string" minOccurs="0"/>
       <xs:element name="numeroDeCaso" type="xs:int"/>
       <xs:element name="numeroDeCredito" type="xs:int"/>
       <xs:element name="numeroDeFolio" type="xs:string" minOccurs="0"/>

@@ -26,9 +26,8 @@ import org.hibernate.Session;
  */
 public class CEntidadHelper {
 
-    
     public CEntidadHelper() {
-    
+
     }
 
     public CEntidad queryConsultaEntidad(String entidad) {
@@ -199,102 +198,111 @@ public class CEntidadHelper {
     }
 
     public String buscaNumeroDeCredito(int numeroDeCredito) {
-        String entidad ="";
-        if (numeroDeCredito >= 0 && numeroDeCredito <= 30000) {
-            entidad = "CHI";
-        }
-        if (numeroDeCredito >= 30001 && numeroDeCredito <= 60000) {
-            entidad = "SON";
-        }
-        if (numeroDeCredito >= 60001 && numeroDeCredito <= 90000) {
-            entidad = "COA";
-        }
-        if (numeroDeCredito >= 90001 && numeroDeCredito <= 120000) {
-            entidad = "DUR";
-        }
-        if (numeroDeCredito >= 120001 && numeroDeCredito <= 150000) {
-            entidad = "OAX";
-        }
-        if (numeroDeCredito >= 150001 && numeroDeCredito <= 180000) {
-            entidad = "TAM";
-        }
-        if (numeroDeCredito >= 180001 && numeroDeCredito <= 210000) {
-            entidad = "JAL";
-        }
-        if (numeroDeCredito >= 210001 && numeroDeCredito <= 240000) {
-            entidad = "ZAC";
-        }
-        if (numeroDeCredito >= 240001 && numeroDeCredito <= 270000) {
-            entidad = "BCS";
-        }
-        if (numeroDeCredito >= 270001 && numeroDeCredito <= 300000) {
-            entidad = "CHP";
-        }
-        if (numeroDeCredito >= 300001 && numeroDeCredito <= 330000) {
-            entidad = "VER";
-        }
-        if (numeroDeCredito >= 330001 && numeroDeCredito <= 360000) {
-            entidad = "BCL";
-        }
-        if (numeroDeCredito >= 360001 && numeroDeCredito <= 390000) {
-            entidad = "NLN";
-        }
-        if (numeroDeCredito >= 390001 && numeroDeCredito <= 410000) {
-            entidad = "GUE";
-        }
-        if (numeroDeCredito >= 410001 && numeroDeCredito <= 430000) {
-            entidad = "SLN";
-        }
-        if (numeroDeCredito >= 430001 && numeroDeCredito <= 450000) {
-            entidad = "MCH";
-        }
-        if (numeroDeCredito >= 450001 && numeroDeCredito <= 480000) {
-            entidad = "CAM";
-        }
-        if (numeroDeCredito >= 480001 && numeroDeCredito <= 510000) {
-            entidad = "SIN";
-        }
-        if (numeroDeCredito >= 510001 && numeroDeCredito <= 540000) {
-            entidad = "QUI";
-        }
-        if (numeroDeCredito >= 540001 && numeroDeCredito <= 570000) {
-            entidad = "YUC";
-        }
-        if (numeroDeCredito >= 570001 && numeroDeCredito <= 600000) {
-            entidad = "PUE";
-        }
-        if (numeroDeCredito >= 600001 && numeroDeCredito <= 630000) {
-            entidad = "GUA";
-        }
-        if (numeroDeCredito >= 630001 && numeroDeCredito <= 660000) {
-            entidad = "NAY";
-        }
-        if (numeroDeCredito >= 660001 && numeroDeCredito <= 690000) {
-            entidad = "TAB";
-        }
-        if (numeroDeCredito >= 690001 && numeroDeCredito <= 720000) {
-            entidad = "MEX";
-        }
-        if (numeroDeCredito >= 720001 && numeroDeCredito <= 750000) {
-            entidad = "HID";
-        }
-        if (numeroDeCredito >= 750001 && numeroDeCredito <= 780000) {
-            entidad = "QUE";
-        }
-        if (numeroDeCredito >= 780001 && numeroDeCredito <= 810000) {
-            entidad = "COL";
-        }
-        if (numeroDeCredito >= 810001 && numeroDeCredito <= 840000) {
-            entidad = "AGU";
-        }
-        if (numeroDeCredito >= 840001 && numeroDeCredito <= 870000) {
-            entidad = "MOR";
-        }
-        if (numeroDeCredito >= 870001 && numeroDeCredito <= 900000) {
-            entidad = "TLA";
-        }
-        if (numeroDeCredito >= 900001) {
-            entidad = "DIF";
+        String entidad = "";
+
+        if (numeroDeCredito > 0 && numeroDeCredito <= 999999999) {
+
+            if (numeroDeCredito >= 0 && numeroDeCredito <= 30000) {
+                entidad = "CHI";
+            }
+            if (numeroDeCredito >= 30001 && numeroDeCredito <= 60000) {
+                entidad = "SON";
+            }
+            if (numeroDeCredito >= 60001 && numeroDeCredito <= 90000) {
+                entidad = "COA";
+            }
+            if (numeroDeCredito >= 90001 && numeroDeCredito <= 120000) {
+                entidad = "DUR";
+            }
+            if (numeroDeCredito >= 120001 && numeroDeCredito <= 150000) {
+                entidad = "OAX";
+            }
+            if (numeroDeCredito >= 150001 && numeroDeCredito <= 180000) {
+                entidad = "TAM";
+            }
+            if (numeroDeCredito >= 180001 && numeroDeCredito <= 210000) {
+                entidad = "JAL";
+            }
+            if (numeroDeCredito >= 210001 && numeroDeCredito <= 240000) {
+                entidad = "ZAC";
+            }
+            if (numeroDeCredito >= 240001 && numeroDeCredito <= 270000) {
+                entidad = "BCS";
+            }
+            if (numeroDeCredito >= 270001 && numeroDeCredito <= 300000) {
+                entidad = "CHP";
+            }
+            if (numeroDeCredito >= 300001 && numeroDeCredito <= 330000) {
+                entidad = "VER";
+            }
+            if (numeroDeCredito >= 330001 && numeroDeCredito <= 360000) {
+                entidad = "BCL";
+            }
+            if (numeroDeCredito >= 360001 && numeroDeCredito <= 390000) {
+                entidad = "NLN";
+            }
+            if (numeroDeCredito >= 390001 && numeroDeCredito <= 410000) {
+                entidad = "GUE";
+            }
+            if (numeroDeCredito >= 410001 && numeroDeCredito <= 430000) {
+                entidad = "SLN";
+            }
+            if (numeroDeCredito >= 430001 && numeroDeCredito <= 450000) {
+                entidad = "MCH";
+            }
+            if (numeroDeCredito >= 450001 && numeroDeCredito <= 480000) {
+                entidad = "CAM";
+            }
+            if (numeroDeCredito >= 480001 && numeroDeCredito <= 510000) {
+                entidad = "SIN";
+            }
+            if (numeroDeCredito >= 510001 && numeroDeCredito <= 540000) {
+                entidad = "QUI";
+            }
+            if (numeroDeCredito >= 540001 && numeroDeCredito <= 570000) {
+                entidad = "YUC";
+            }
+            if (numeroDeCredito >= 570001 && numeroDeCredito <= 600000) {
+                entidad = "PUE";
+            }
+            if (numeroDeCredito >= 600001 && numeroDeCredito <= 630000) {
+                entidad = "GUA";
+            }
+            if (numeroDeCredito >= 630001 && numeroDeCredito <= 660000) {
+                entidad = "NAY";
+            }
+            if (numeroDeCredito >= 660001 && numeroDeCredito <= 690000) {
+                entidad = "TAB";
+            }
+            if (numeroDeCredito >= 690001 && numeroDeCredito <= 720000) {
+                entidad = "MEX";
+            }
+            if (numeroDeCredito >= 720001 && numeroDeCredito <= 750000) {
+                entidad = "HID";
+            }
+            if (numeroDeCredito >= 750001 && numeroDeCredito <= 780000) {
+                entidad = "QUE";
+            }
+            if (numeroDeCredito >= 780001 && numeroDeCredito <= 810000) {
+                entidad = "COL";
+            }
+            if (numeroDeCredito >= 810001 && numeroDeCredito <= 840000) {
+                entidad = "AGU";
+            }
+            if (numeroDeCredito >= 840001 && numeroDeCredito <= 870000) {
+                entidad = "MOR";
+            }
+            if (numeroDeCredito >= 870001 && numeroDeCredito <= 900000) {
+                entidad = "TLA";
+            }
+            if (numeroDeCredito >= 900001) {
+                entidad = "DIF";
+            }
+
+            
+
+        }else{
+            entidad = "Error en la longitud del número de crédito. No más de 9 digitos.";
         }
         return entidad;
     }

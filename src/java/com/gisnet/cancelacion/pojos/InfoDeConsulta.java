@@ -31,6 +31,40 @@ public class InfoDeConsulta {
     String cartaDeCancelacion;
     Date fechaEmisionCarta;
     String numeroDeFolio;
+    String nombreAcreditado;
+    String entidad;
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Date getFechaEmisionCarta() {
+        return fechaEmisionCarta;
+    }
+
+    public void setFechaEmisionCarta(Date fechaEmisionCarta) {
+        this.fechaEmisionCarta = fechaEmisionCarta;
+    }
+
+    public String getNombreAcreditado() {
+        return nombreAcreditado;
+    }
+
+    public void setNombreAcreditado(String nombreAcreditado) {
+        this.nombreAcreditado = nombreAcreditado;
+    }
+
+    public String getEntidad() {
+        return entidad;
+    }
+
+    public void setEntidad(String entidad) {
+        this.entidad = entidad;
+    }
 
     public int getNumeroDeCredito() {
         return numeroDeCredito;
